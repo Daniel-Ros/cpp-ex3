@@ -1,6 +1,6 @@
 #!make -f
 
-CXX=clang++-9
+CXX=clang++
 CXXFLAGS=-std=c++2a -Werror -Wsign-conversion
 
 SOURCES=Matrix.cpp
