@@ -113,7 +113,7 @@ namespace zich
 
     Matrix operator*(const double d,const Matrix& matrix) // not a member function, but it's the place for it now
     {
-        return Matrix(m_Data,m_Rows,m_Columns);;
+        return Matrix(matrix.m_Data,matrix.m_Rows,matrix.m_Columns);;
     }
 
     Matrix Matrix::operator*(double scalar) const
