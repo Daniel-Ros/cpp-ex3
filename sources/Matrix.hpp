@@ -7,7 +7,8 @@ namespace zich
     {
     public:
         Matrix();
-        Matrix(std::vector<double>,unsigned int,unsigned int);
+        Matrix(const std::vector<double>&, int, int);
+        Matrix(const std::vector<double>&, unsigned int, unsigned int);
         ~Matrix() = default;
 
         Matrix operator+() const ;
@@ -18,9 +19,9 @@ namespace zich
         Matrix& operator-=(const Matrix&);
 
         Matrix& operator++();// prefix
-        Matrix& operator++(int); // postfix
+        Matrix operator++(int); // postfix
         Matrix& operator--(); // prefix
-        Matrix& operator--(int); // postfix
+        Matrix operator--(int); // postfix
 
         bool operator==(const Matrix&) const;
         bool operator!=(const Matrix&) const;
@@ -36,7 +37,7 @@ namespace zich
         Matrix& operator*=(const Matrix&);
 
         friend std::ostream& operator<<(std::ostream&,const Matrix&);
-        friend std::istream& operator>>(std::istream&,const Matrix&);
+        friend std::istream& operator>>(std::istream&,Matrix&);
     private:
         std::vector<double> m_Data;
         unsigned int m_Rows;
